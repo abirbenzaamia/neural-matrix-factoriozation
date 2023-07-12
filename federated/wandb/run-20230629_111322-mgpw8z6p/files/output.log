@@ -1,0 +1,167 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+epoch: 187, loss: 0.48, time: 1.35:  47%|██████████████████████████████▊                                   | 187/400 [23:24<26:39,  7.51s/it]
+Traceback (most recent call last):
+  File "src/main.py", line 86, in <module>
+    main()
+  File "src/main.py", line 67, in main
+    trained_model = run_server(dataset, num_clients=args.c, epochs=args.epochs,
+  File "/home/abenzaamia/NeuMF/federated/src/server.py", line 35, in run_server
+    trained_weights = training_process(server_model, clients, num_clients, epochs, local_epochs, dataset, args)
+  File "/home/abenzaamia/NeuMF/federated/src/federeco/train.py", line 66, in training_process
+    w, loss = single_train_round(server_model, clients, local_epochs)
+  File "/home/abenzaamia/NeuMF/federated/src/federeco/train.py", line 110, in single_train_round
+    weights, loss = client.train(server_model_copy, local_epochs)
+  File "/home/abenzaamia/NeuMF/federated/src/client.py", line 46, in train
+    for _, (u, i, l) in enumerate(dataloader):
+  File "/home/abenzaamia/.venv/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 633, in __next__
+    data = self._next_data()
+  File "/home/abenzaamia/.venv/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 676, in _next_data
+    index = self._next_index()  # may raise StopIteration
+  File "/home/abenzaamia/.venv/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 623, in _next_index
+    return next(self._sampler_iter)  # may raise StopIteration
+  File "/home/abenzaamia/.venv/lib/python3.8/site-packages/torch/utils/data/sampler.py", line 254, in __iter__
+    for idx in self.sampler:
+  File "/home/abenzaamia/.venv/lib/python3.8/site-packages/torch/utils/data/sampler.py", line 133, in __iter__
+    yield from torch.randperm(n, generator=generator).tolist()[:self.num_samples % n]
+KeyboardInterrupt

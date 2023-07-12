@@ -1,0 +1,101 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+epoch: 82, loss: 0.07, time: 3.21:  20%|██▎        | 82/400 [05:56<23:03,  4.35s/it]
+Traceback (most recent call last):
+  File "src/main.py", line 85, in <module>
+    main()
+  File "src/main.py", line 66, in main
+    trained_model = run_server(dataset, num_clients=args.c, epochs=args.epochs,
+  File "/home/abenzaamia/NeuCF/federated/src/server.py", line 35, in run_server
+    trained_weights = training_process(server_model, clients, num_clients, epochs, local_epochs, dataset, args)
+  File "/home/abenzaamia/NeuCF/federated/src/federeco/train.py", line 66, in training_process
+    w, loss = single_train_round(server_model, clients, local_epochs)
+  File "/home/abenzaamia/NeuCF/federated/src/federeco/train.py", line 110, in single_train_round
+    weights, loss = client.train(server_model_copy, local_epochs)
+  File "/home/abenzaamia/NeuCF/federated/src/client.py", line 49, in train
+    loss.backward()
+  File "/home/abenzaamia/.venv/lib/python3.8/site-packages/torch/_tensor.py", line 487, in backward
+    torch.autograd.backward(
+  File "/home/abenzaamia/.venv/lib/python3.8/site-packages/torch/autograd/__init__.py", line 200, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+KeyboardInterrupt

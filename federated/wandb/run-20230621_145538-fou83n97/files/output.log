@@ -1,0 +1,49 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+epoch: 21, loss: 0.03, time: 8.12:   5%|▍        | 21/400 [03:27<1:02:26,  9.89s/it]
+Traceback (most recent call last):
+  File "src/main.py", line 85, in <module>
+    main()
+  File "src/main.py", line 66, in main
+    trained_model = run_server(dataset, num_clients=args.c, epochs=args.epochs,
+  File "/home/abenzaamia/NeuCF/federated/src/server.py", line 35, in run_server
+    trained_weights = training_process(server_model, clients, num_clients, epochs, local_epochs, dataset, args)
+  File "/home/abenzaamia/NeuCF/federated/src/federeco/train.py", line 66, in training_process
+    w, loss = single_train_round(server_model, clients, local_epochs)
+  File "/home/abenzaamia/NeuCF/federated/src/federeco/train.py", line 110, in single_train_round
+    weights, loss = client.train(server_model_copy, local_epochs)
+  File "/home/abenzaamia/NeuCF/federated/src/client.py", line 47, in train
+    logits, loss = server_model(u, i, l)
+  File "/home/abenzaamia/.venv/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/abenzaamia/NeuCF/federated/src/federeco/models.py", line 44, in forward
+    mlp_vector = layer(mlp_vector)
+  File "/home/abenzaamia/.venv/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/abenzaamia/.venv/lib/python3.8/site-packages/torch/nn/modules/activation.py", line 103, in forward
+    return F.relu(input, inplace=self.inplace)
+  File "/home/abenzaamia/.venv/lib/python3.8/site-packages/torch/nn/functional.py", line 1457, in relu
+    result = torch.relu(input)
+KeyboardInterrupt

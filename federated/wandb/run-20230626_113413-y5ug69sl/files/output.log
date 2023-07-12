@@ -1,0 +1,212 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+epoch: 357, loss: 0.44, time: 0.73:  36%|███████████████████████▌                                          | 357/1000 [06:15<11:17,  1.05s/it]
+Traceback (most recent call last):
+  File "src/main.py", line 86, in <module>
+    main()
+  File "src/main.py", line 67, in main
+    trained_model = run_server(dataset, num_clients=args.c, epochs=args.epochs,
+  File "/home/abenzaamia/NeuCF/federated/src/server.py", line 35, in run_server
+    trained_weights = training_process(server_model, clients, num_clients, epochs, local_epochs, dataset, args)
+  File "/home/abenzaamia/NeuCF/federated/src/federeco/train.py", line 66, in training_process
+    w, loss = single_train_round(server_model, clients, local_epochs)
+  File "/home/abenzaamia/NeuCF/federated/src/federeco/train.py", line 110, in single_train_round
+    weights, loss = client.train(server_model_copy, local_epochs)
+  File "/home/abenzaamia/NeuCF/federated/src/client.py", line 51, in train
+    optimizer.step()
+  File "/home/abenzaamia/.venv/lib/python3.8/site-packages/torch/optim/optimizer.py", line 280, in wrapper
+    out = func(*args, **kwargs)
+  File "/home/abenzaamia/.venv/lib/python3.8/site-packages/torch/optim/optimizer.py", line 33, in _use_grad
+    ret = func(self, *args, **kwargs)
+  File "/home/abenzaamia/.venv/lib/python3.8/site-packages/torch/optim/adamw.py", line 171, in step
+    adamw(
+  File "/home/abenzaamia/.venv/lib/python3.8/site-packages/torch/optim/adamw.py", line 321, in adamw
+    func(
+  File "/home/abenzaamia/.venv/lib/python3.8/site-packages/torch/optim/adamw.py", line 440, in _single_tensor_adamw
+    denom = (exp_avg_sq.sqrt() / bias_correction2_sqrt).add_(eps)
+KeyboardInterrupt
