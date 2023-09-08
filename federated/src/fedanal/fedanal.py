@@ -1,7 +1,7 @@
 
-from federeco.models import MatrixFactorization as MF
-from federeco.train import training_process
-from federeco.config import DEVICE, TOPK
+from fedmf.models import MatrixFactorization as MF
+from fedmf.train import training_process
+from fedmf.config import DEVICE, TOPK
 from dataset import Dataset
 from client import Client
 from typing import List
